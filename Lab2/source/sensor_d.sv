@@ -16,7 +16,7 @@ module sensor_d (
 	wire or1;
 
 	assign and1 = (sensors[3] & sensors[1]);//AC
-	assign and2 = (sensors[2] & sensors[0]);//BC
+	assign and2 = (sensors[2] & sensors[1]);//BC
 	assign or1 = (and1 | and2);//AC + BC
 	assign error = (sensors[0] | or1);//D+AC+BC
 
