@@ -5,6 +5,8 @@
 // Lab Section: 337-06
 // Version:     1.0  Initial Design Entry
 // Description: 1 bit adder
+
+`timescale 1ns / 100ps
 module adder_1bit (
 	input wire a,
 	input wire b,
@@ -30,9 +32,9 @@ module adder_1bit (
 	assign sum = carry_in ^ (a ^ b);
 	assign carry_out = ((~carry_in) & b & a) | (carry_in & (b | a));
 
-	always@(a[0],b[0],carry_in[0])
+	always@(a,b,carry_in)
 	begin
-		#(2) assert(((a[0] + b[0] + carry_in[0]) %2 ) == sum[0])
+		#(2) assert(((a + b + carry_in) %2 ) == sum)
 		else $error("Output 's' of first 1 bit adder is not correct");
 	end
 

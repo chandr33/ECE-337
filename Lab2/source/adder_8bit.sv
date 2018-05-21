@@ -12,5 +12,14 @@ module adder_8bit
 	output wire overflow
 );
 
-	// STUDENT: Fill in the correct port map with parameter override syntax for using your n-bit ripple carry adder design to be an 8-bit ripple carry adder design
+	wire [8:0] carrys;
+	genvar i;
+	assign carrys[0] = carry_in;
+	generate
+		for(i=0;i<=7;i=i+1)
+		begin
+			adder_1bit IX (.a(a[i]), .b(b[i]), .carry_in(carrys[i]), .sum(sum[i]), .carry_out(carrys[i+1]));
+		end
+	endgenerate
+	assign overflow = carrys[8];
 endmodule

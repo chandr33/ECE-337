@@ -283,7 +283,7 @@ module tb_fir_image();
 			
 			if(NO_COMPRESSION != compression_mode)
 				$fatal("This input file is using compression, this is not supported by this test bench");
-			
+       		
 		end
 		else if(DIB_HEADER_C2_SIZE == dib_header_size)
 		begin

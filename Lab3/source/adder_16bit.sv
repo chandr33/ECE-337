@@ -5,6 +5,8 @@
 // Lab Section: 337-06
 // Version:     1.0  Initial Design Entry
 // Description: 16 bit adder
+
+`timescale 1ns / 100ps
 module adder_16bit
 (
 	input wire [15:0] a,

@@ -3,6 +3,7 @@
 // STUDENT: Replace this message and the above header section with an
 // appropriate header based on your other code files
 
+`timescale 1ns / 100ps
 module adder_8bit
 (
 	input wire [7:0] a,

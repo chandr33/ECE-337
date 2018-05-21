@@ -5,6 +5,8 @@
 // Lab Section: 337-06
 // Version:     1.0  Initial Design Entry
 // Description: n bit adder
+
+`timescale 1ns / 100ps
 module adder_nbit 
 #(
 	parameter BIT_WIDTH = 4

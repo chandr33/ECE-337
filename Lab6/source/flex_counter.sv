@@ -36,6 +36,8 @@ module flex_counter
 
 	always_comb
 	begin
+		
+		next_count='0;
 		if(clear == 1)
 		begin
 			next_count= '0;
@@ -57,6 +59,7 @@ module flex_counter
 	end
 	always_comb
 	begin
+		next_flag='0;
 		if(clear == 1)
 			next_flag = 0;
 

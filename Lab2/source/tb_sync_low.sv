@@ -172,6 +172,43 @@ module tb_sync_low();
 		end
 		
 		// STUDENT: Add your tests after this point
+		// Test Case 6: Setup Violation with Input as a '1'
+		@(negedge tb_clk); 
+		tb_test_num = tb_test_num + 1;
+		tb_test_case = "Setup Violation with Input as a '1'";
+		@(posedge tb_clk);
+		#(CLK_PERIOD - (FF_SETUP_TIME * 0.5)); // Make sure the value get's updated during the setup time -> setup violation
+		tb_async_in = 1'b1;
+		@(posedge tb_clk); 
+		@(posedge tb_clk); 
+		#(CHECK_DELAY);
+		if((1'b1 == tb_sync_out) || (1'b0 == tb_sync_out))
+		begin // Test case passed
+			$info("Correct synchronizer output for %s test case", tb_test_case);
+		end
+		else
+		begin // Test case failed
+			$error("Incorrect synchronizer output for %s test case", tb_test_case);
+		end
+
+		// Test Case 7: Hold Violation with Input as a '0'
+		@(negedge tb_clk); 
+		tb_test_num = tb_test_num + 1;
+		tb_test_case = "Hold Violation with Input as a '0'";
+		@(posedge tb_clk);
+		#(FF_HOLD_TIME * 0.5); // Make sure the value get's updated during the hold time -> setup violation
+		tb_async_in = 1'b0;
+		@(posedge tb_clk); 
+		@(posedge tb_clk); 
+		#(CHECK_DELAY);
+		if((1'b1 == tb_sync_out) || (1'b0 == tb_sync_out))
+		begin // Test case passed
+			$info("Correct synchronizer output for %s test case", tb_test_case);
+		end
+		else
+		begin // Test case failed
+			$error("Incorrect synchronizer output for %s test case", tb_test_case);
+		end
 		
 	end
 endmodule
