@@ -1,0 +1,134 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : usb_receiver
+Version: K-2015.06-SP1
+Date   : Wed Feb 28 20:22:56 2018
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: RX_FIFO/rx_fifo/URFC/raddr_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: r_data[7] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  RX_FIFO/rx_fifo/URFC/raddr_reg[1]/CLK (DFFSR)           0.00       0.00 r
+  RX_FIFO/rx_fifo/URFC/raddr_reg[1]/Q (DFFSR)             0.61       0.61 f
+  RX_FIFO/rx_fifo/URFC/raddr[1] (read_fifo_ctrl)          0.00       0.61 f
+  RX_FIFO/rx_fifo/UFIFORAM/raddr[1] (fiforam)             0.00       0.61 f
+  RX_FIFO/rx_fifo/UFIFORAM/U71/Y (INVX2)                  0.13       0.75 r
+  RX_FIFO/rx_fifo/UFIFORAM/U14/Y (NOR2X1)                 0.15       0.89 f
+  RX_FIFO/rx_fifo/UFIFORAM/U8/Y (BUFX2)                   0.68       1.57 f
+  RX_FIFO/rx_fifo/UFIFORAM/U64/Y (AOI22X1)                0.23       1.80 r
+  RX_FIFO/rx_fifo/UFIFORAM/U65/Y (AOI21X1)                0.15       1.95 f
+  RX_FIFO/rx_fifo/UFIFORAM/U69/Y (OR2X1)                  0.13       2.08 f
+  RX_FIFO/rx_fifo/UFIFORAM/rdata[7] (fiforam)             0.00       2.08 f
+  RX_FIFO/rx_fifo/r_data[7] (fifo)                        0.00       2.08 f
+  RX_FIFO/r_data[7] (rx_fifo)                             0.00       2.08 f
+  r_data[7] (out)                                         0.00       2.08 f
+  data arrival time                                                  2.08
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : usb_receiver
+Version: K-2015.06-SP1
+Date   : Wed Feb 28 20:22:56 2018
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                          233
+Number of nets:                           897
+Number of cells:                          701
+Number of combinational cells:            477
+Number of sequential cells:               206
+Number of macros/black boxes:               0
+Number of buf/inv:                        128
+Number of references:                       9
+
+Combinational area:             141777.000000
+Buf/Inv area:                    19080.000000
+Noncombinational area:          166176.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                307953.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : usb_receiver
+Version: K-2015.06-SP1
+Date   : Wed Feb 28 20:22:57 2018
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+usb_receiver                              0.508   14.244   92.865   14.752 100.0
+  SHIFT (shift_register)               7.37e-03    1.042    5.550    1.049   7.1
+    shift_reg (flex_stp_sr_NUM_BITS8_SHIFT_MSB0)
+                                       7.37e-03    1.042    5.550    1.049   7.1
+  RCU (rcu)                               0.135    0.534    6.651    0.669   4.5
+  TIMER (timer)                        9.14e-02    1.105   10.168    1.196   8.1
+    count_bits (flex_counter_NUM_CNT_BITS4_0)
+                                       1.32e-02    0.523    4.961    0.536   3.6
+    count_cycles (flex_counter_NUM_CNT_BITS4_1)
+                                       7.35e-02    0.580    4.961    0.654   4.4
+  RX_FIFO (rx_fifo)                    3.69e-02    9.289   65.610    9.326  63.2
+    rx_fifo (fifo)                     3.69e-02    9.289   65.610    9.326  63.2
+      URFC (read_fifo_ctrl)            3.69e-02    2.103   13.466    2.140  14.5
+        RPU1 (read_ptr)                1.07e-03    0.822    5.746    0.823   5.6
+      UWFC (write_fifo_ctrl)              0.000    2.047   13.547    2.047  13.9
+        WPU1 (write_ptr)                  0.000    0.819    5.746    0.819   5.6
+      UFIFORAM (fiforam)                  0.000    5.139   38.597    5.139  34.8
+  DECODE (decode)                      6.98e-02    0.608    1.458    0.678   4.6
+  DETECT_EOP (eop_detect)              9.53e-02 5.33e-02 5.10e-02    0.149   1.0
+  DETECT (edge_detect)                 6.48e-02    0.740    1.246    0.804   5.5
+  LOW (sync_low)                       4.13e-03    0.410    1.066    0.415   2.8
+  HIGH (sync_high)                     4.26e-03    0.462    1.066    0.467   3.2
+1
