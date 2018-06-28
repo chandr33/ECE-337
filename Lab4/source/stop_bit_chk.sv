@@ -1,7 +1,7 @@
 // $Id: $
 // File name:   stop_bit_chk.sv
 // Created:     2/5/2013
-// Author:      foo
+// Author:      Rochak Chandra
 // Lab Section: 99
 // Version:     1.0  Initial Design Entry
 // Description: stop bit checker for Lab 5
