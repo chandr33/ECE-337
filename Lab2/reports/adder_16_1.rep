@@ -1,0 +1,121 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : adder_16
+Version: K-2015.06-SP1
+Date   : Wed Jan 24 20:31:39 2018
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: b[2] (input port)
+  Endpoint: sum[15] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  b[2] (in)                                0.00       0.00 r
+  r304/B[2] (adder_16_DW01_add_1)          0.00       0.00 r
+  r304/U113/Y (NOR2X1)                     0.29       0.29 f
+  r304/U110/Y (OAI21X1)                    0.16       0.45 r
+  r304/U108/Y (AOI21X1)                    0.24       0.69 f
+  r304/U75/Y (OAI21X1)                     0.22       0.91 r
+  r304/U46/Y (AOI21X1)                     0.24       1.15 f
+  r304/U40/Y (OAI21X1)                     0.25       1.40 r
+  r304/U32/Y (AOI21X1)                     0.25       1.65 f
+  r304/U26/Y (OAI21X1)                     0.25       1.90 r
+  r304/U18/Y (AOI21X1)                     0.25       2.14 f
+  r304/U12/Y (OAI21X1)                     0.25       2.39 r
+  r304/U3/Y (XNOR2X1)                      0.17       2.57 f
+  r304/SUM[15] (adder_16_DW01_add_1)       0.00       2.57 f
+  sum[15] (out)                            0.00       2.57 f
+  data arrival time                                   2.57
+
+  max_delay                                2.70       2.70
+  output external delay                    0.00       2.70
+  data required time                                  2.70
+  -----------------------------------------------------------
+  data required time                                  2.70
+  data arrival time                                  -2.57
+  -----------------------------------------------------------
+  slack (MET)                                         0.13
+
+
+1
+ 
+****************************************
+Report : area
+Design : adder_16
+Version: K-2015.06-SP1
+Date   : Wed Jan 24 20:31:39 2018
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                          103
+Number of nets:                           199
+Number of cells:                          117
+Number of combinational cells:            115
+Number of sequential cells:                 1
+Number of macros/black boxes:               0
+Number of buf/inv:                         23
+Number of references:                       1
+
+Combinational area:              28611.000000
+Buf/Inv area:                     3312.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 28611.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : adder_16
+Version: K-2015.06-SP1
+Date   : Wed Jan 24 20:31:39 2018
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+adder_16                                  9.514   13.351    8.273   22.866 100.0
+  r304 (adder_16_DW01_add_1)              9.514   13.351    8.273   22.866 100.0
+1
