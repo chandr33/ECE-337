@@ -1,0 +1,215 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fir_filter
+Version: K-2015.06-SP1
+Date   : Fri Feb 16 01:15:03 2018
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: control/current_state_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: path/RF/genblk1[0].REGX/value_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  control/current_state_reg[2]/CLK (DFFSR)                0.00       0.00 r
+  control/current_state_reg[2]/Q (DFFSR)                  0.58       0.58 f
+  control/U27/Y (AND2X2)                                  0.24       0.81 f
+  control/U38/Y (AND2X2)                                  0.27       1.09 f
+  control/U100/Y (NAND2X1)                                0.28       1.36 r
+  control/U157/Y (NAND3X1)                                0.28       1.65 f
+  control/src1[2] (controller)                            0.00       1.65 f
+  path/src1[2] (datapath)                                 0.00       1.65 f
+  path/RF/r1_sel[2] (register_file)                       0.00       1.65 f
+  path/RF/U460/Y (INVX2)                                  0.15       1.79 r
+  path/RF/U451/Y (NAND3X1)                                0.13       1.92 f
+  path/RF/U457/Y (INVX4)                                  0.13       2.06 r
+  path/RF/U74/Y (INVX8)                                   0.11       2.17 f
+  path/RF/U75/Y (INVX8)                                   0.09       2.26 r
+  path/RF/U99/Y (INVX1)                                   0.19       2.45 f
+  path/RF/U462/Y (INVX2)                                  0.10       2.54 r
+  path/RF/U303/Y (AOI21X1)                                0.11       2.65 f
+  path/RF/U302/Y (OAI21X1)                                0.12       2.77 r
+  path/RF/U301/Y (NOR2X1)                                 0.16       2.93 f
+  path/RF/U297/Y (AOI22X1)                                0.15       3.08 r
+  path/RF/U53/Y (INVX2)                                   0.19       3.28 f
+  path/RF/r1_data[8] (register_file)                      0.00       3.28 f
+  path/CORE/src1_data[8] (alu)                            0.00       3.28 f
+  path/CORE/mult_35/a[23] (alu_DW_mult_uns_2)             0.00       3.28 f
+  path/CORE/mult_35/U881/Y (XNOR2X1)                      0.25       3.52 f
+  path/CORE/mult_35/U1071/Y (AND2X2)                      0.31       3.83 f
+  path/CORE/mult_35/U1051/Y (INVX4)                       0.20       4.03 r
+  path/CORE/mult_35/U598/Y (OAI22X1)                      0.24       4.28 f
+  path/CORE/mult_35/U408/YC (FAX1)                        0.30       4.58 f
+  path/CORE/mult_35/U869/Y (BUFX2)                        0.25       4.83 f
+  path/CORE/mult_35/U400/YC (FAX1)                        0.43       5.27 f
+  path/CORE/mult_35/U393/YC (FAX1)                        0.29       5.56 f
+  path/CORE/mult_35/U870/Y (BUFX2)                        0.25       5.81 f
+  path/CORE/mult_35/U1131/Y (XOR2X1)                      0.24       6.05 f
+  path/CORE/mult_35/U1132/Y (XOR2X1)                      0.21       6.26 r
+  path/CORE/mult_35/U250/Y (NOR2X1)                       0.26       6.52 f
+  path/CORE/mult_35/U247/Y (OAI21X1)                      0.16       6.68 r
+  path/CORE/mult_35/U245/Y (AOI21X1)                      0.20       6.88 f
+  path/CORE/mult_35/U204/Y (OAI21X1)                      0.21       7.08 r
+  path/CORE/mult_35/U1185/Y (INVX4)                       0.14       7.22 f
+  path/CORE/mult_35/U1239/Y (INVX8)                       0.14       7.36 r
+  path/CORE/mult_35/U88/Y (AOI21X1)                       0.16       7.52 f
+  path/CORE/mult_35/U975/Y (XNOR2X1)                      0.18       7.70 r
+  path/CORE/mult_35/product[44] (alu_DW_mult_uns_2)       0.00       7.70 r
+  path/CORE/U84/Y (AOI22X1)                               0.09       7.79 f
+  path/CORE/U86/Y (NAND2X1)                               0.18       7.97 r
+  path/CORE/result[14] (alu)                              0.00       7.97 r
+  path/U12/Y (INVX2)                                      0.08       8.05 f
+  path/U14/Y (OAI21X1)                                    0.18       8.23 r
+  path/RF/w_data[14] (register_file)                      0.00       8.23 r
+  path/RF/U747/Y (INVX4)                                  0.22       8.45 f
+  path/RF/U756/Y (INVX8)                                  0.14       8.59 r
+  path/RF/genblk1[0].REGX/new_value[14] (flex_sreg_NUM_BITS17_15)
+                                                          0.00       8.59 r
+  path/RF/genblk1[0].REGX/U36/Y (MUX2X1)                  0.10       8.68 f
+  path/RF/genblk1[0].REGX/U13/Y (INVX1)                   0.10       8.78 r
+  path/RF/genblk1[0].REGX/value_reg[14]/D (DFFSR)         0.00       8.78 r
+  data arrival time                                                  8.78
+
+  clock clk (rise edge)                                   9.00       9.00
+  clock network delay (ideal)                             0.00       9.00
+  path/RF/genblk1[0].REGX/value_reg[14]/CLK (DFFSR)       0.00       9.00 r
+  library setup time                                     -0.22       8.78
+  data required time                                                 8.78
+  --------------------------------------------------------------------------
+  data required time                                                 8.78
+  data arrival time                                                 -8.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+ 
+****************************************
+Report : area
+Design : fir_filter
+Version: K-2015.06-SP1
+Date   : Fri Feb 16 01:15:03 2018
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                         1180
+Number of nets:                          4799
+Number of cells:                         3636
+Number of combinational cells:           3012
+Number of sequential cells:               594
+Number of macros/black boxes:               0
+Number of buf/inv:                        958
+Number of references:                       6
+
+Combinational area:             917271.000000
+Buf/Inv area:                   159552.000000
+Noncombinational area:          464112.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               1381383.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : fir_filter
+Version: K-2015.06-SP1
+Date   : Fri Feb 16 01:15:03 2018
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+fir_filter                               10.436   74.442  423.557   84.878 100.0
+  control (controller)                    1.065    2.432   13.530    3.497   4.1
+  path (datapath)                         9.276   68.410  388.839   77.687  91.5
+    RF (register_file)                    5.864   65.569  243.393   71.434  84.2
+      genblk1[15].REGX (flex_sreg_NUM_BITS17_0)
+                                       7.63e-02    3.886   11.917    3.962   4.7
+      genblk1[14].REGX (flex_sreg_NUM_BITS17_1)
+                                       7.63e-02    3.886   11.917    3.962   4.7
+      genblk1[13].REGX (flex_sreg_NUM_BITS17_2)
+                                       7.63e-02    3.886   11.917    3.962   4.7
+      genblk1[12].REGX (flex_sreg_NUM_BITS17_3)
+                                       7.63e-02    3.886   11.917    3.962   4.7
+      genblk1[11].REGX (flex_sreg_NUM_BITS17_4)
+                                       7.63e-02    3.886   11.917    3.962   4.7
+      genblk1[10].REGX (flex_sreg_NUM_BITS17_5)
+                                          0.145    4.026   11.917    4.171   4.9
+      genblk1[9].REGX (flex_sreg_NUM_BITS17_6)
+                                          0.127    3.987   11.917    4.114   4.8
+      genblk1[8].REGX (flex_sreg_NUM_BITS17_7)
+                                          0.112    3.958   11.917    4.070   4.8
+      genblk1[7].REGX (flex_sreg_NUM_BITS17_8)
+                                          0.122    3.907   11.917    4.029   4.7
+      genblk1[6].REGX (flex_sreg_NUM_BITS17_9)
+                                          0.102    3.937   11.917    4.039   4.8
+      genblk1[5].REGX (flex_sreg_NUM_BITS17_10)
+                                          0.189    4.121   11.917    4.310   5.1
+      genblk1[4].REGX (flex_sreg_NUM_BITS17_11)
+                                          0.131    3.998   11.917    4.129   4.9
+      genblk1[3].REGX (flex_sreg_NUM_BITS17_12)
+                                       9.93e-02    3.905   11.917    4.005   4.7
+      genblk1[2].REGX (flex_sreg_NUM_BITS17_13)
+                                       9.77e-02    3.895   11.917    3.993   4.7
+      genblk1[1].REGX (flex_sreg_NUM_BITS17_14)
+                                       9.91e-02    3.894   11.917    3.993   4.7
+      genblk1[0].REGX (flex_sreg_NUM_BITS17_15)
+                                          0.144    3.915   11.917    4.059   4.8
+    CORE (alu)                            2.854    2.462  141.227    5.316   6.3
+      mult_35 (alu_DW_mult_uns_2)         2.355    2.116  117.880    4.471   5.3
+      add_41 (alu_DW01_add_1)          9.35e-02    0.119    8.487    0.213   0.3
+      sub_44 (alu_DW01_sub_1)             0.105    0.118    8.413    0.223   0.3
+    DEC (datapath_decode)                 0.117 6.97e-02    0.536    0.187   0.2
+  mag (magnitude)                      4.51e-03 4.78e-03    6.862 9.29e-03   0.0
+  count_num (counter)                  6.62e-02    2.554   12.195    2.621   3.1
+    counter (flex_counter_NUM_CNT_BITS10)
+                                       6.62e-02    2.554   12.195    2.621   3.1
+      add_49 (flex_counter_NUM_CNT_BITS10_DW01_inc_0)
+                                       1.78e-03 3.75e-03    2.309 5.52e-03   0.0
+  sync_coeff (sync_low_0)              7.12e-03    0.521    1.066    0.528   0.6
+  sync_data (sync_low_1)               1.68e-02    0.519    1.066    0.536   0.6
+1
